@@ -1,0 +1,31 @@
+name: horas
+
+on:
+  push:
+    branches: [main]
+
+jobs:  
+  build:
+    runs-on: ubuntu-lastet
+    permissions:
+      contents: write
+    
+
+    steps: 
+      - name: Checkout repositorio
+      - uses: actions/checkout@v4
+
+      - name: Setup de Python
+      - uses: actions/checkout@v6
+        with:
+            python-version: 'pypy3.13.3'
+
+      - name: Run del script      
+      - run: python ./horas_paises.py
+
+      - name: Commit y Push changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Paises horas ok
+          commit_user_name: Beatriz Lopez [GitHub Actions]
+          
