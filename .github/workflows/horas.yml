@@ -20,6 +20,9 @@ jobs:
         with:
             python-version: '3.13.3'
 
+      - name: Instalar dependencias
+        run: pip install pytz
+
       - name: Run del script      
         run: python ./horas_paises.py
 
