@@ -18,7 +18,7 @@ jobs:
       - name: Setup de Python
         uses: actions/setup-python@v5
         with:
-            python-version: 'pypy3.13.3'
+            python-version: '3.13.3'
 
       - name: Run del script      
         run: python ./horas_paises.py
